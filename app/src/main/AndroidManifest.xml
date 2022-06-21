@@ -10,7 +10,19 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.RDAsportsANDROID">
         <activity
-            android:name=".MainActivity"
+            android:name=".view.CustomerAreaView"
+            android:exported="false" />
+        <activity
+            android:name=".view.AddSesionView"
+            android:exported="false" />
+        <activity
+            android:name=".view.RegisterView"
+            android:exported="false" />
+        <activity
+            android:name=".view.LogInView"
+            android:exported="false" />
+        <activity
+            android:name=".view.MainActivityView"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
