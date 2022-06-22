@@ -41,7 +41,7 @@
             android:hint="Email">>
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/tfEmail"
+                android:id="@+id/email_log"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/audiowide" />
@@ -59,11 +59,12 @@
             android:hint="Contraseña">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/tfPassword"
+                android:id="@+id/password_log"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
-                android:fontFamily="@font/audiowide" />
+                android:fontFamily="@font/audiowide"
+                android:inputType="textPassword" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -73,7 +74,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:fontFamily="@font/audiowide"
-            android:onClick="areas"
+            android:onClick="logIn"
             android:text="Iniciar sesion" />
 
         <TextView
