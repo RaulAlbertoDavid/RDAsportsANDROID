@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.AddSesionView">
+    tools:context=".view.AddSessionView">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -17,19 +17,42 @@
             android:padding="15dp">
 
             <TextView
-                android:id="@+id/tv_monitor"
+                android:id="@+id/tittle_session"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/audiowide"
                 android:gravity="center"
+                android:text="Crea una actividad"
+                android:textSize="25dp" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="15dp"
+                android:layout_weight="1" />
+
+            <View
+                android:id="@+id/divider4"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="?android:attr/listDivider" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="15dp"
+                android:layout_weight="1" />
+
+            <TextView
+                android:id="@+id/tv_monitor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/audiowide"
                 android:text="Monitor"
                 android:textSize="20dp" />
 
             <Spinner
                 android:id="@+id/spinner_employee"
                 android:layout_width="match_parent"
-                android:layout_height="44dp"
-                android:layout_marginTop="8dp"
+                android:layout_height="48dp"
                 android:spinnerMode="dialog" />
 
             <TextView
@@ -37,15 +60,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/audiowide"
-                android:gravity="center"
                 android:text="Actividad"
                 android:textSize="20dp" />
 
             <Spinner
                 android:id="@+id/spinner_activity"
                 android:layout_width="match_parent"
-                android:layout_height="44dp"
-                android:layout_marginTop="8dp"
+                android:layout_height="48dp"
                 android:spinnerMode="dialog" />
 
             <TextView
@@ -53,16 +74,15 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/audiowide"
-                android:gravity="center"
                 android:text="Area"
                 android:textSize="20dp" />
 
             <Spinner
                 android:id="@+id/spinner_area"
                 android:layout_width="match_parent"
-                android:layout_height="44dp"
-                android:layout_marginTop="8dp"
-                android:spinnerMode="dialog" />
+                android:layout_height="48dp"
+                android:spinnerMode="dialog"
+                tools:ignore="SpeakableTextPresentCheck" />
 
             <Space
                 android:layout_width="match_parent"
@@ -70,13 +90,13 @@
                 android:layout_weight="1" />
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/tf_hour"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Hora">
+                android:hint="Hora de inicio (HH:mm)">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/tf_hour"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/audiowide"
@@ -90,17 +110,17 @@
                 android:layout_weight="1" />
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/tf_time"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Fecha">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/session_date"
+                    android:id="@+id/tf_date"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/audiowide"
+                    android:inputType="time"
                     android:onClick="clickDate" />
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -177,7 +197,8 @@
                 android:id="@+id/add_match_button"
                 android:layout_width="match_parent"
                 android:layout_height="55dp"
-                android:text="añadir sesión" />
+                android:onClick="addSession"
+                android:text="añadir actividad" />
 
         </LinearLayout>
     </ScrollView>
