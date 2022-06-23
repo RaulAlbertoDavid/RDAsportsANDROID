@@ -8,7 +8,9 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:filterTouchesWhenObscured="false"
+        android:orientation="vertical"
+        app:chainUseRtl="false">
 
         <ImageView
             android:id="@+id/imageView"
@@ -82,10 +84,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
+            android:contextClickable="false"
             android:gravity="center"
+            android:linksClickable="false"
             android:onClick="register"
+            android:pointerIcon="context_menu"
             android:text="¿Aún no te has registrado? Pinche aquí"
             android:textColor="#FF9800"
+            android:textColorLink="#130101"
             android:textSize="15sp"
             android:textStyle="bold" />
 

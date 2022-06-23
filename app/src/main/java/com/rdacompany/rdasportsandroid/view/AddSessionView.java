@@ -79,15 +79,23 @@ public class AddSessionView extends AppCompatActivity implements AddSessionContr
     @Override
     public void addSession(View view) {
         SessionDto session = new SessionDto();
-        session.setEmployee(employee.getEmployeeId());
-        session.setActivity(activity.getActivityId());
-        session.setArea(area.getAreaId());
-        session.setDateTime(date.getText().toString() + " " + hour.getText().toString());
-        session.setDuration(Integer.parseInt(duration.getText().toString()));
-        session.setCapacity(Integer.parseInt(capacity.getText().toString()));
-        session.setLevel(Integer.parseInt(level.getText().toString()));
-        presenter.addSession(session);
-        finish();
+        if (date.getText().toString().isEmpty()
+                || hour.getText().toString().isEmpty()
+                || duration.getText().toString().isEmpty()
+                || capacity.getText().toString().isEmpty()
+                || level.getText().toString().isEmpty()){
+            showMessage("Los campos no pueden estar vacios");
+        } else {
+            session.setEmployee(employee.getEmployeeId());
+            session.setActivity(activity.getActivityId());
+            session.setArea(area.getAreaId());
+            session.setDateTime(date.getText().toString() + " " + hour.getText().toString());
+            session.setDuration(Integer.parseInt(duration.getText().toString()));
+            session.setCapacity(Integer.parseInt(capacity.getText().toString()));
+            session.setLevel(Integer.parseInt(level.getText().toString()));
+            presenter.addSession(session);
+            finish();
+        }
     }
 
     @Override
