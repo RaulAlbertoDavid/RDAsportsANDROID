@@ -60,11 +60,11 @@ public class AddSessionPresenter implements AddSessionContract.Presenter, AddSes
 
     @Override
     public void onAddSessionSuccess(String message) {
-
+        view.showMessage(message);
     }
 
     @Override
     public void onAddSessionError(String message) {
-
+        view.showMessage(message);
     }
 }
